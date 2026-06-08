@@ -1,0 +1,16 @@
+--- # Garak LLM Vulnerability Scanner Config
+system:
+  report_prefix: "redteam-audit-report"
+  verbose: 1
+
+probes:
+  - jailbreak.DAN
+
+evaluators:
+  threshold: 0.95
+  exit_on_failure: true
+
+runner:
+  generations: 100
+  model_type: "huggingface"
+  model_name: "microsoft/Phi-3-mini-4k-instruct"
